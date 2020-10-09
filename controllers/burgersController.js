@@ -5,6 +5,8 @@ var router = express.Router();
 // Import the model (cat.js) to use its database functions.
 var burger = require("../models/burger.js");
 
+let eatenBinary;
+
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
   burger.all(function (data) {
@@ -17,6 +19,8 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
+  // console.log("CONSOLE LOG REQ BODY");
+  // console.log(req);
   burger.create(["name", "eaten"], [req.body.name, req.body.eaten], function (
     result
   ) {
@@ -28,13 +32,18 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
-  console.log("ERROR HERE!");
-  console.log(req.body);
+  if (req.body.eaten == 1) {
+    eatenBinary = 0;
+  } else {
+    eatenBinary = 1;
+  }
+
+  console.log("EATENBINARY");
+  console.log(eatenBinary);
 
   burger.update(
     {
-      eaten: req.body.eaten,
+      eaten: eatenBinary,
     },
     condition,
     function (result) {
