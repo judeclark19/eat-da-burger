@@ -1,9 +1,9 @@
-<li>
-	{{name}}
-
-	<button class="eat-switch" data-id="{{id}}" data-eaten="{{eaten}}">
-		{{#if eaten}}Order another{{else}}EAT DA BURGER{{/if}}
+<div class="a-burger">
+	<span class="burger-name">{{name}}</span>
+	<br />
+	<button type="button" class="btn btn-success eat-switch" data-id="{{id}}" data-eaten="{{eaten}}">
+		{{#if eaten}}Order another{{else}}EAT{{/if}}
 	</button>
 
-	<button class="delete-burger" data-id="{{this.id}}">DELETE</button>
-</li>
+	<button type="button" class="btn btn-danger delete-burger" data-id="{{this.id}}">DEL</button>
+</div>

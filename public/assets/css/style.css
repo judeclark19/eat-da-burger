@@ -1,12 +1,33 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+* {
+  font-family: "Chilanka", cursive;
 }
 
-.label {
-  font-weight: bold;
+.jumbotron {
+  /* background-color: yellow; */
+  background-image: url("../burger-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right; /* Center the image */
+  color: white;
+  background-color: #13292b;
 }
+
+li {
+  /* padding: 5px; */
+  /* margin: 5px; */
+  /* background: #faebd7; */
+}
+
+.a-burger {
+  /* text-align: center; */
+  /* border: 1px solid #333; */
+  padding: 10px;
+  /* list-style-type: none; */
+}
+
+/* .label {
+  font-weight: bold;
+} */
 
 .create-update-form {
   padding: 5px;
@@ -16,4 +37,29 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.adddiv {
+  text-align: center;
+  /* border: 2px solid red; */
+  margin-bottom: 30px;
+}
+
+.toeat,
+.eaten {
+  padding: 10px;
+  text-align: center;
+  border: 2px outset;
+  /* border: 2px solid green; */
+  /* background-color: lightblue; */
+}
+.eaten {
+  /* text-align: center; */
+  /* border: 2px solid blue; */
+  /* background-color: lightgray; */
+}
+
+.burger-name {
+  /* background-color: pink; */
+  font-size: 24px;
 }
