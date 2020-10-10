@@ -9,7 +9,7 @@ let eatenBinary;
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  burger.all(function (data) {
+  burger.selectAll(function (data) {
     var hbsObject = {
       burgers: data,
     };
@@ -21,12 +21,14 @@ router.get("/", function (req, res) {
 router.post("/api/burgers", function (req, res) {
   // console.log("CONSOLE LOG REQ BODY");
   // console.log(req);
-  burger.create(["name", "eaten"], [req.body.name, req.body.eaten], function (
-    result
-  ) {
-    // Send back the ID of the new burger
-    res.json({ id: result.insertId });
-  });
+  burger.insertOne(
+    ["name", "eaten"],
+    [req.body.name, req.body.eaten],
+    function (result) {
+      // Send back the ID of the new burger
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
 router.put("/api/burgers/:id", function (req, res) {
@@ -41,7 +43,7 @@ router.put("/api/burgers/:id", function (req, res) {
   console.log("EATENBINARY");
   console.log(eatenBinary);
 
-  burger.update(
+  burger.updateOne(
     {
       eaten: eatenBinary,
     },
