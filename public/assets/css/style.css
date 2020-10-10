@@ -4,7 +4,7 @@
 
 .jumbotron {
   /* background-color: yellow; */
-  background-image: url("../burger-wallpaper.jpg");
+  background-image: url("../images/burger-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right; /* Center the image */
